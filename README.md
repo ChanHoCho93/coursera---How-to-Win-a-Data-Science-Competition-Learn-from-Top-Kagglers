@@ -16,7 +16,7 @@
 
  - Which python library you usually use
 
- - How to preprocess these features and create new features
+ - How to preprocess these features and create new ones
 
   
 
@@ -107,3 +107,19 @@
 * Careful choosing of pretrained network can help
 * Finetuning allows to refine pretrained models
 * Data augmentation can improve the model
+
+### week2
+ - EDA
+ - Validation
+ - Data leaks
+
+#### EDA (Exploratory Data Analysis)
+
+* With EDA we can:    
+    * get comfortable with the data
+    * find magic features
+    * Do EDA first. Do not immediately dig into modeling.
+ * Exploring anonymized data
+    * Try To decode the features - Guess the true meaning of the feature
+    * Each type needs its own preprocessing
+
