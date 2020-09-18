@@ -82,8 +82,9 @@
 #### Pipline of applying BOW(bag of words)
 
 * Preprocessing:
-  * Lowercase, stemming, lemmatization, stopwords
-
+  
+* Lowercase, stemming, lemmatization, stopwords
+  
 * Ngrams can help to use local context
 
 * Postprocessing: TFiDF
@@ -121,5 +122,35 @@
     * Do EDA first. Do not immediately dig into modeling.
  * Exploring anonymized data
     * Try To decode the features - Guess the true meaning of the feature
+    
     * Each type needs its own preprocessing
+    
+      
 
+#### Explore features
+
+* Explore individual features
+  	* Histogram
+  	* Plot(index vs value)
+  	* Statistics
+
+* Explore feature relations
+
+   * Pairs
+     	* Scatter plot, Scatter matrix
+     	* Corrplot
+
+  * Groups
+
+    * Corrplot + clustering
+
+    * Plot(index vs feature statistics)
+
+      
+
+#### Dataset cleaning
+
+* Constant features
+* Duplicated features
+* Duplicated rows
+* Check if dataset is shuffled (for meaning)
