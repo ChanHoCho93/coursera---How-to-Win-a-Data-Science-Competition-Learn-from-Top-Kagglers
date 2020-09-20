@@ -151,6 +151,98 @@
 #### Dataset cleaning
 
 * Constant features
+
 * Duplicated features
+
 * Duplicated rows
+
 * Check if dataset is shuffled (for meaning)
+
+  
+
+#### Vaildation and overfitting
+
+* Vaildation helps us evaluate a qualit of th model
+* Vaildation helps us select the model which will perform best on the unseen data
+* Underfitting refers to not capturing enough patterns in the data
+* Generally, overfitting refers to 
+  * capturing noize
+  * capturing patterns which do not generalize to test data
+
+* In competitions, overfitting refers to
+
+  * low model's quality on test data, which was unexpected due to validation scores
+
+    
+
+#### Vaildation strategies
+
+* There are three main vaildation strategies:
+  * Holdout
+    * Split train data into two parts: partA and partB
+    * Fit the model on partA, predict for partB.
+    * Use predictions for partB for etimation model quality. Find such hyper-parameters, that quality on partB is maximized.
+  * KFold
+    * Split train data into K folds
+    * Iterate though each fold: retrain the model on all folds except current fold, predict for the current fold.
+    * Use the predictons to calculate quality on each fold. Find such hyper-parameters, that quality on each fold is maximized. You can also estimate mean and variance of the loss. This is very helpful in ordet to understand significance of improvement.
+  * LOO
+    * Iterate over samples: retrain the model on all samples except current sample, predict for the current sample. You will need to retrain the model N times (if N is the number of samples in the dataset).
+    * In the end you will get LOO predictions for every sample in the trainset and can calculate loss.
+
+#### Data splitting strategies
+
+* In most cases data is split by
+  * Row number
+  * Time
+  * Id
+
+* Logic of featre generation depends on the data splitting strategy
+* Set up your validation to mimic the train/test split of the competition
+
+#### Problems occurring during validation
+
+##### Vaildation stage
+
+* Causes of different scores and optimal parameters
+  * Too little data
+  * Too diverse anad inconsitent data
+
+* We should do extensive validation
+  * Average scores from different KFold splits
+  * True model on one slpit, evaluate scroe on the other
+
+##### Submission stage
+
+* We can observe that:
+  * LB score is consistently higher/lower that vaildation score
+  * LB score is not correlated with valition score at all
+
+* Causes of validation probelms:
+  * too little data in public leaderboard
+  * incorrect train/test split
+  * different distributions in train and test
+
+##### Conclusion
+
+* If we have big dispersion of scores on validation stage, we should do extensive validation
+  * Averge scores from different KFold splits
+  * Tune model on one slpit, evaluate score on the other
+
+* If submission's score do not match local validation score,
+  * we should
+    * Check if we ave too little data in public LB
+    * Check if we overfitted
+    * Check if we clhose correct slpittiong strategy
+    * Check if train/test have different distibutions
+
+* Expect LB shuffle because of 
+  * Randomness
+  * Little amount of data
+  * Different public/private distributions
+
+* Summary of Validation topic
+  * Defined validation and its connection to overfitting
+  * Described common validation strategies
+  * Demonstrated major data splitting strategies
+  * Analysed and learn how to tackle main validation problems
