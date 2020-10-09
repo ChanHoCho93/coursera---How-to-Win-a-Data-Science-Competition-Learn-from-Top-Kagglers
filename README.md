@@ -207,7 +207,6 @@
 * Causes of different scores and optimal parameters
   * Too little data
   * Too diverse anad inconsitent data
-
 * We should do extensive validation
   * Average scores from different KFold splits
   * True model on one slpit, evaluate scroe on the other
@@ -217,7 +216,6 @@
 * We can observe that:
   * LB score is consistently higher/lower that vaildation score
   * LB score is not correlated with valition score at all
-
 * Causes of validation probelms:
   * too little data in public leaderboard
   * incorrect train/test split
@@ -228,14 +226,12 @@
 * If we have big dispersion of scores on validation stage, we should do extensive validation
   * Averge scores from different KFold splits
   * Tune model on one slpit, evaluate score on the other
-
 * If submission's score do not match local validation score,
   * we should
     * Check if we ave too little data in public LB
     * Check if we overfitted
     * Check if we clhose correct slpittiong strategy
     * Check if train/test have different distibutions
-
 * Expect LB shuffle because of 
   * Randomness
   * Little amount of data
@@ -247,44 +243,3 @@
   * Demonstrated major data splitting strategies
   * Analysed and learn how to tackle main validation problems
 
-### week3
-
-
-
-#### Metrics Motivation
-
-* Why there are so many metrics?
-  * Different metrics for different problems
-
-* Why should we care about metric in competitions?
-  * It is how the competotors are ranked
-
-#### MAE vs MSE
-
-* Do you have outliers in the data?
-  * Use MAE
-
-* Are you sure they are outliers?
-  * USe MAE
-
-* Or they are just unexpected values we should still care about?
-  * Use MSE
-
-#### Discussed the following metrics:
-
-* MSE, RMSE, R-squared 
-  * They are the same from optimization perspective
-
-* MAE
-  * Robust to outliers
-
-#### DIscussed the metrics, sensitive to relative errors:
-
-* MSPE
-  * Weighted version of MSE
-
-* MAPE
-  * Weighted version of MAE
-
-* MSLE
-  * MSE in log space
